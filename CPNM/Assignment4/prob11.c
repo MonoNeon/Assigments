@@ -30,7 +30,7 @@ int main() {
     
     squeeze(s, c);
     
-    printf("Modified string: %s\n", s);
+    printf("Modified string: %s", s);
     
     return 0;
 }
