@@ -4,25 +4,33 @@ Write a function squeeze(s,c) which removes all occurrences of the character c f
 
 #include <stdio.h>
 
-void squeeze(char s[], char c) {
-    int i, j = 0;
+#include <stdio.h>
 
-    for (i = 0; s[i] != '\0'; i++) {
-        if (s[i] != c) {
-            s[j++] = s[i];
+void squeeze(char *str, char c) {
+    int i, j = 0;
+    
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] != c) {
+            str[j++] = str[i];
         }
     }
-
-    s[j] = '\0';
+    
+    str[j] = '\0';
 }
 
 int main() {
-    char str[] = "Hello, World!";
-    char char_to_remove = 'o';
+    char s[100];
+    char c;
     
-    printf("Original string: %s\n", str);
-    squeeze(str, char_to_remove);
-    printf("Modified string: %s\n", str);
+    printf("Enter the string: ");
+    fgets(s, sizeof(s), stdin);
+    
+    printf("Enter the character to remove: ");
+    scanf("%c", &c);
+    
+    squeeze(s, c);
+    
+    printf("Modified string: %s\n", s);
     
     return 0;
 }
